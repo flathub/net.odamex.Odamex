@@ -50,28 +50,54 @@ modules:
       - type: git
         url: https://github.com/jeremy-rifkin/libdwarf-lite.git
         tag: v0.12.0
-  # Odamex (combined)
-  - name: Odamex
-    buildsystem: simple
-    build-commands:
-      - chmod +x packaging/flatpak/flatpak-buildgen.sh
-      - IS_FLATHUB=1
-      - "./packaging/flatpak/flatpak-buildgen.sh"
+  # Odalaunch dependencies
+  - name: WxWidgets
+    buildsystem: autotools
+    config-opts:
+      - --enable-unicode
+      - --with-gtk3
+    cleanup:
+      - '/lib/wx'
+      - '/share/aclocal'
+      - '/share/bakefile'
     sources:
-      - type: archive
-        url: https://github.com/Doom-Utils/deutex/releases/download/v5.2.2/deutex-5.2.2.tar.zst
-        sha256: 10ed0e7a533ec97cb6d03548d4258fbec88852a45b5ea4cf5434376ad4174b5f
-        dest: wad
-        strip-components: 0
       - type: archive
         url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5/wxWidgets-3.0.5.tar.bz2
         sha256: 8aacd56b462f42fb6e33b4d8f5d40be5abc3d3b41348ea968aa515cc8285d813
-        dest: libraries
-        strip-components: 0
+  # Odamex (combined)
+  - name: Odamex
+    buildsystem: cmake-ninja
+    config-opts:
+      - -D CMAKE_BUILD_TYPE=RelWithDebInfo
+      - -D BUILD_OR_FAIL=1
+      - -D BUILD_CLIENT=1
+      - -D BUILD_SERVER=1
+      - -D BUILD_LAUNCHER=1
+      - -D BUILD_MASTER=0
+      - -D USE_INTERNAL_LIBS=1
+      - -D USE_INTERNAL_DEUTEX=1
+      - -D ODAMEX_INSTALL_BINDIR=/app/bin
+      - -D ODAMEX_INSTALL_DATADIR=/run/host/usr/share
+      - -D USE_EXTERNAL_LIBDWARF=1
+      - -D ODAMEX_NO_GITVER=1
+    post-install:
+      - chmod +x packaging/flatpak/flatpak-post-install.sh
+      - "./packaging/flatpak/flatpak-post-install.sh"
+      # delete files that cleanup can't see
+      - rm -rf /app/bin/wx*
+      - rm -rf /app/lib/cmake
+      - rm -rf /app/lib/pkgconfig
+      - rm -rf /app/lib64/cmake
+      - rm -rf /app/lib64/libdwarf.a
+      - rm -rf /app/lib64/pkgconfig
+      - rm -rf /app/include
+    sources:
+      - type: archive
+        url: https://github.com/Doom-Utils/deutex/releases/download/v5.2.3/deutex-5.2.3.tar.zst
+        sha256: 935dcae490fb574e8ad90ef54bdeb599c7055fedca117d79ce837cbc19d070ab
+        dest: wad/deutex
       - type: git
         url: https://github.com/odamex/odamex.git
-        commit: ae717f2a2837b937f76e054a8b5676ee5c7f8c80
+        commit: 13bbda15c3b956b5d44a1bda16ccc00f3e5e8798
       - type: patch
         path: metainfo.patch
-      - type: patch
-        path: buildgen.patch
