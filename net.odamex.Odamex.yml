@@ -98,6 +98,6 @@ modules:
         dest: wad/deutex
       - type: git
         url: https://github.com/odamex/odamex.git
-        commit: 13bbda15c3b956b5d44a1bda16ccc00f3e5e8798
+        commit: e8d0828d759d8679d933e7927114c0903d65ce2a
       - type: patch
         path: metainfo.patch
