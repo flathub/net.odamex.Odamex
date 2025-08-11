@@ -7,7 +7,7 @@ index b1daba774..69c2b63de 100644
    </branding>
    <releases>
 -    <release version="11.1.0" date="YYYY-MM-DD" />
-+    <release version="11.1.0" date="2025-08-10" />
++    <release version="11.1.0" date="2025-08-10">
 +      <url type="details">https://github.com/odamex/odamex/releases/tag/11.1.0</url>
 +      <description>
 +        <p>First official Flathub release! Flatpak versions are now in line with the releases on other platforms.</p>
