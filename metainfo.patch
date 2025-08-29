@@ -1,12 +1,18 @@
 diff --git a/packaging/linux/net.odamex.Odamex.metainfo.xml b/packaging/linux/net.odamex.Odamex.metainfo.xml
-index b1daba774..69c2b63de 100644
+index d18f004d7..2f1b87189 100644
 --- a/packaging/linux/net.odamex.Odamex.metainfo.xml
 +++ b/packaging/linux/net.odamex.Odamex.metainfo.xml
-@@ -102,6 +102,11 @@
+@@ -102,6 +102,17 @@
      <color type="primary" scheme_preference="dark">#404042</color>
    </branding>
    <releases>
 -    <release version="11.1.0" date="YYYY-MM-DD" />
++    <release version="11.1.1" date="2025-09-24">
++      <url type="details">https://github.com/odamex/odamex/releases/tag/11.1.1</url>
++      <description>
++        <p>This is just a small patch to fix a few issues encountered with 11.1.0, plus a few QoL features. See the release notes for more details!</p>
++      </description>
++    </release>
 +    <release version="11.1.0" date="2025-08-10">
 +      <url type="details">https://github.com/odamex/odamex/releases/tag/11.1.0</url>
 +      <description>

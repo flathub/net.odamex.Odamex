@@ -49,7 +49,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/jeremy-rifkin/libdwarf-lite.git
-        tag: v0.12.0
+        tag: v2.1.0
   # Odalaunch dependencies
   - name: WxWidgets
     buildsystem: autotools
@@ -98,6 +98,6 @@ modules:
         dest: wad/deutex
       - type: git
         url: https://github.com/odamex/odamex.git
-        tag: 11.1.0
+        tag: 11.1.1
       - type: patch
         path: metainfo.patch
