@@ -8,6 +8,7 @@ command: select-exe
 separate-locales: false
 finish-args:
   - --share=ipc
+  - --device-if=all:!has-input-device
   - --device=input
   - --device=dri
   - --socket=pulseaudio
