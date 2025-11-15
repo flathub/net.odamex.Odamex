@@ -10,7 +10,7 @@ index acbfd671a..e6bbd0e43 100644
    <metadata_license>CC0-1.0</metadata_license>
    <project_license>GPL-2.0-or-later</project_license>
    <supports>
-@@ -102,6 +103,17 @@
+@@ -102,6 +103,23 @@
      <color type="primary" scheme_preference="dark">#404042</color>
    </branding>
    <releases>
