@@ -1,8 +1,8 @@
 diff --git a/packaging/linux/net.odamex.Odamex.metainfo.xml b/packaging/linux/net.odamex.Odamex.metainfo.xml
-index acbfd671a..e6bbd0e43 100644
+index 212addd51..9127c11b7 100644
 --- a/packaging/linux/net.odamex.Odamex.metainfo.xml
 +++ b/packaging/linux/net.odamex.Odamex.metainfo.xml
-@@ -102,6 +103,23 @@
+@@ -103,6 +103,29 @@
      <color type="primary" scheme_preference="dark">#404042</color>
    </branding>
    <releases>
