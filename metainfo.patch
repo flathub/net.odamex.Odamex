@@ -7,7 +7,7 @@ index acbfd671a..e6bbd0e43 100644
    </branding>
    <releases>
 -    <release version="12.0.0" date="YYYY-MM-DD" />
-+    <release version="12.0.0" date="2025-12-17">
++    <release version="12.0.0" date="2025-12-25">
 +      <url type="details">https://github.com/odamex/odamex/releases/tag/12.0.0</url>
 +      <description>
 +        <p>This is a major update featuring support for DSDHacked, friendly monsters, many MBF21 bugfixes, and more!</p>
