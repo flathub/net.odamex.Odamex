@@ -84,6 +84,8 @@ modules:
     post-install:
       - chmod +x packaging/flatpak/flatpak-post-install.sh
       - "./packaging/flatpak/flatpak-post-install.sh"
+      - chmod +x install-release-metainfo.sh
+      - "./install-release-metainfo.sh"
       # delete files that cleanup can't see
       - rm -rf /app/bin/wx*
       - rm -rf /app/lib/cmake
@@ -102,3 +104,7 @@ modules:
         tag: 12.0.0
       - type: patch
         path: metainfo.patch
+      - type: file
+        path: net.odamex.Odamex.releases.xml
+      - type: file
+        path: install-release-metainfo.sh
