@@ -106,3 +106,5 @@ modules:
         path: net.odamex.Odamex.releases.xml
       - type: file
         path: install-release-metainfo.sh
+      - type: file
+        path: patch-metainfo.py
