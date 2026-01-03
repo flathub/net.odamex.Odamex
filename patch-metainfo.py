@@ -1,6 +1,6 @@
 import xml.etree.ElementTree as ET
 
-path = "/app/share/metainfo/releases/net.odamex.Odamex.releases.xml"
+path = "/app/share/metainfo/net.odamex.Odamex.metainfo.xml"
 
 tree = ET.parse(path)
 root = tree.getroot()
