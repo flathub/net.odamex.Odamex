@@ -84,6 +84,8 @@ modules:
     post-install:
       - chmod +x packaging/flatpak/flatpak-post-install.sh
       - "./packaging/flatpak/flatpak-post-install.sh"
+      - ./install-release-metainfo.sh
+      - python3 patch-metainfo.py
       # delete files that cleanup can't see
       - rm -rf /app/bin/wx*
       - rm -rf /app/lib/cmake
@@ -100,5 +102,9 @@ modules:
       - type: git
         url: https://github.com/odamex/odamex.git
         tag: 12.0.0
-      - type: patch
-        path: metainfo.patch
+      - type: file
+        path: net.odamex.Odamex.releases.xml
+      - type: file
+        path: install-release-metainfo.sh
+      - type: file
+        path: patch-metainfo.py
