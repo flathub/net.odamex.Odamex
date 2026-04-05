@@ -74,6 +74,7 @@ modules:
       - -D BUILD_SERVER=1
       - -D BUILD_LAUNCHER=1
       - -D BUILD_MASTER=0
+      - -D BUILD_TESTS=0
       - -D USE_INTERNAL_LIBS=0
       - -D USE_INTERNAL_WXWIDGETS=1
       - -D USE_INTERNAL_DEUTEX=1
@@ -82,10 +83,7 @@ modules:
       - -D USE_EXTERNAL_LIBDWARF=1
       - -D ODAMEX_NO_GITVER=1
     post-install:
-      - chmod +x packaging/flatpak/flatpak-post-install.sh
-      - "./packaging/flatpak/flatpak-post-install.sh"
-      - ./install-release-metainfo.sh
-      - python3 patch-metainfo.py
+      - ./packaging/flatpak/flatpak-post-install.sh
       # delete files that cleanup can't see
       - rm -rf /app/bin/wx*
       - rm -rf /app/lib/cmake
