@@ -95,16 +95,9 @@ modules:
       - rm -rf /app/lib64/pkgconfig
       - rm -rf /app/include
     sources:
-      - type: archive
-        url: https://github.com/Doom-Utils/deutex/releases/download/v5.2.3/deutex-5.2.3.tar.zst
-        sha256: 935dcae490fb574e8ad90ef54bdeb599c7055fedca117d79ce837cbc19d070ab
-        dest: wad/deutex
       - type: git
         url: https://github.com/odamex/odamex.git
-        tag: 12.1.0
+        commit: 4bfe6bbfc328a95d09f36a3a5fa22ea55c08fba1
       - type: file
         path: net.odamex.Odamex.releases.xml
-      - type: file
-        path: install-release-metainfo.sh
-      - type: file
-        path: patch-metainfo.py
+        dest: packaging/linux
