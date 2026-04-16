@@ -7,7 +7,7 @@
         <li>Support for MBF21 BOSS flags</li>
         <li>A new sprees and multi-kills system</li>
         <li>Pasting from the clipboard into the in-game console no longer crashes on Wayland</li>
-        <li>Window icons for the client and launcher appear more consistently on KDE</li>
+        <li>Window icons for the client and launcher appear more consistently on KDE Plasma and Raspberry Pi OS</li>
         <li>Odalaunch now supports dark mode</li>
       </ul>
     </description>
