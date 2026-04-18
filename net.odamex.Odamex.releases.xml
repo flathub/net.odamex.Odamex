@@ -1,5 +1,5 @@
 <releases>
-  <release version="12.2.0" date="2026-04-05">
+  <release version="12.2.0" date="2026-04-17">
     <url type="details">https://github.com/odamex/odamex/releases/tag/12.2.0</url>
     <description>
       <p>This update brings several smaller features and some important bugfixes for Linux:</p>
