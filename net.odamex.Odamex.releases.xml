@@ -1,4 +1,17 @@
 <releases>
+  <release version="12.2.0" date="2026-04-05">
+    <url type="details">https://github.com/odamex/odamex/releases/tag/12.2.0</url>
+    <description>
+      <p>This update brings several smaller features and some important bugfixes for Linux:</p>
+      <ul>
+        <li>Support for MBF21 BOSS flags</li>
+        <li>A new sprees and multi-kills system</li>
+        <li>Pasting from the clipboard into the in-game console no longer crashes on Wayland</li>
+        <li>Window icons for the client and launcher appear more consistently on KDE Plasma and Raspberry Pi OS</li>
+        <li>Odalaunch now supports dark mode</li>
+      </ul>
+    </description>
+  </release>
   <release version="12.1.0" date="2026-01-05">
     <url type="details">https://github.com/odamex/odamex/releases/tag/12.1.0</url>
     <description>

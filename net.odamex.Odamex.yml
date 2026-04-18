@@ -54,16 +54,32 @@ modules:
   - name: WxWidgets
     buildsystem: autotools
     config-opts:
-      - --enable-unicode
-      - --with-gtk3
+      # once cmake fixes are in, use cmake with these options
+      # - -D wxBUILD_SHARED=ON
+      # - -D wxBUILD_TESTS=OFF
+      # - -D wxBUILD_SAMPLES=OFF
+      # - -D wxBUILD_DEMOS=OFF
+      # - -D wxBUILD_TOOLKIT=gtk3
+      # - -D wxUSE_SYS_LIBS=sys
+      - --with-gtk=3
+      - --disable-tests
     cleanup:
-      - '/lib/wx'
-      - '/share/aclocal'
-      - '/share/bakefile'
+      - "/lib/wx"
+      - "/share/aclocal"
+      - "/share/bakefile"
+      - "/lib/libwx_gtk3u_adv-3.3*"
+      - "/lib/libwx_gtk3u_aui-3.3*"
+      - "/lib/libwx_gtk3u_gl-3.3*"
+      - "/lib/libwx_gtk3u_media-3.3*"
+      - "/lib/libwx_gtk3u_propgrid-3.3*"
+      - "/lib/libwx_gtk3u_qa-3.3*"
+      - "/lib/libwx_gtk3u_ribbon-3.3*"
+      - "/lib/libwx_gtk3u_richtext-3.3*"
+      - "/lib/libwx_gtk3u_stc-3.3*"
     sources:
-      - type: archive
-        url: https://github.com/wxWidgets/wxWidgets/releases/download/v3.0.5/wxWidgets-3.0.5.tar.bz2
-        sha256: 8aacd56b462f42fb6e33b4d8f5d40be5abc3d3b41348ea968aa515cc8285d813
+      - type: git
+        url: https://github.com/wxWidgets/wxWidgets.git
+        tag: v3.3.2
   # Odamex (combined)
   - name: Odamex
     buildsystem: cmake-ninja
@@ -74,18 +90,14 @@ modules:
       - -D BUILD_SERVER=1
       - -D BUILD_LAUNCHER=1
       - -D BUILD_MASTER=0
+      - -D BUILD_TESTS=0
       - -D USE_INTERNAL_LIBS=0
-      - -D USE_INTERNAL_WXWIDGETS=1
-      - -D USE_INTERNAL_DEUTEX=1
       - -D ODAMEX_INSTALL_BINDIR=/app/bin
       - -D ODAMEX_INSTALL_DATADIR=/run/host/usr/share
       - -D USE_EXTERNAL_LIBDWARF=1
       - -D ODAMEX_NO_GITVER=1
     post-install:
-      - chmod +x packaging/flatpak/flatpak-post-install.sh
-      - "./packaging/flatpak/flatpak-post-install.sh"
-      - ./install-release-metainfo.sh
-      - python3 patch-metainfo.py
+      - ./packaging/flatpak/flatpak-post-install.sh
       # delete files that cleanup can't see
       - rm -rf /app/bin/wx*
       - rm -rf /app/lib/cmake
@@ -95,16 +107,9 @@ modules:
       - rm -rf /app/lib64/pkgconfig
       - rm -rf /app/include
     sources:
-      - type: archive
-        url: https://github.com/Doom-Utils/deutex/releases/download/v5.2.3/deutex-5.2.3.tar.zst
-        sha256: 935dcae490fb574e8ad90ef54bdeb599c7055fedca117d79ce837cbc19d070ab
-        dest: wad/deutex
       - type: git
         url: https://github.com/odamex/odamex.git
-        tag: 12.1.0
+        tag: 12.2.0
       - type: file
         path: net.odamex.Odamex.releases.xml
-      - type: file
-        path: install-release-metainfo.sh
-      - type: file
-        path: patch-metainfo.py
+        dest: packaging/linux
