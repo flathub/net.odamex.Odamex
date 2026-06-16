@@ -16,7 +16,7 @@ finish-args:
   - --socket=wayland
   - --socket=fallback-x11
   - --filesystem=~/.odamex:create
-  - --filesystem=home # needs to be able to create banfile.json and .odalaunch config file, as well as read any odasrv cfgs
+  - --filesystem=home # needs to be able to create banfile.json and read any odasrv cfgs
   - --filesystem=host-os:ro # for standard doom data locations in /usr
   - --filesystem=host-etc:ro # standard location for timidity configs, so users can override the included one
   - --env=TIMIDITY_CFG=/app/etc/timidity.cfg
