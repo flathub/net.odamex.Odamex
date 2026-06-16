@@ -8,7 +8,6 @@ command: select-exe
 separate-locales: false
 finish-args:
   - --share=ipc
-  - --device=all
   - --device-if=all:!has-input-device
   - --device=input
   - --device=dri
