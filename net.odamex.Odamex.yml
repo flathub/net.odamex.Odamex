@@ -44,6 +44,7 @@ modules:
       - type: git
         url: https://github.com/libsdl-org/SDL_mixer.git
         tag: release-2.8.1
+        commit: 171eb2d420d5643e4ee11514a06e04a41a463bbd
   # cpptrace dependencies
   - name: libdwarf
     buildsystem: cmake-ninja
@@ -52,7 +53,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/jeremy-rifkin/libdwarf-lite.git
-        tag: v2.1.0
+        tag: v2.3.1
+        commit: d06f37ed6660b324e458387d43efde3d84c9dd55
   # Odalaunch dependencies
   - name: WxWidgets
     buildsystem: autotools
@@ -83,6 +85,7 @@ modules:
       - type: git
         url: https://github.com/wxWidgets/wxWidgets.git
         tag: v3.3.2
+        commit: db1005db3dea2c37a46fb455a9a02e37aa360751
   # Odamex (combined)
   - name: Odamex
     buildsystem: cmake-ninja
@@ -113,6 +116,7 @@ modules:
       - type: git
         url: https://github.com/odamex/odamex.git
         tag: 12.2.0
+        commit: 27faa5adada33bd4a918d1a9a26a23532a21b337
       - type: file
         path: net.odamex.Odamex.releases.xml
         dest: packaging/linux
