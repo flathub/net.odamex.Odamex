@@ -32,6 +32,7 @@ modules:
       - type: archive
         url: https://www.libsdl.org/projects/old/SDL_mixer/timidity/timidity.tar.gz
         sha256: ee7c59bb5d5fae206d53eef0e82b5ed739e7cbf69252a3754024f8f52ebe77aa
+  # SDL2_mixer is rebuilt locally with timidity support to preserve MIDI playback.
   - name: SDL2-mixer
     buildsystem: cmake-ninja
     builddir: true
