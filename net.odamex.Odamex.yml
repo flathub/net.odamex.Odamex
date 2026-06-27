@@ -115,8 +115,8 @@ modules:
     sources:
       - type: git
         url: https://github.com/odamex/odamex.git
-        tag: 12.2.0
-        commit: 27faa5adada33bd4a918d1a9a26a23532a21b337
+        tag: 12.2.1
+        commit: 4fd01a846ec6c314d0a407188891f90daf8b66ba
       - type: file
         path: net.odamex.Odamex.releases.xml
         dest: packaging/linux
