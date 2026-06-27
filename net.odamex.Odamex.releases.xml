@@ -1,4 +1,10 @@
 <releases>
+  <release version="12.2.1" date="2026-06-27">
+    <url type="details">https://github.com/odamex/odamex/releases/tag/12.2.1</url>
+    <description>
+      <p>This update brings many bug fixes for 12.2's features, as well as a colorized server console.</p>
+    </description>
+  </release>
   <release version="12.2.0" date="2026-04-17">
     <url type="details">https://github.com/odamex/odamex/releases/tag/12.2.0</url>
     <description>
