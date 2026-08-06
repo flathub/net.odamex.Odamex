@@ -1,4 +1,16 @@
 <releases>
+  <release version="12.3.0" date="2026-08-06">
+    <url type="details">https://github.com/odamex/odamex/releases/tag/12.3.0</url>
+    <description>
+      <ul>
+        <li>Many ACS additions and bug fixes</li>
+        <li>Mouse navigation in menus</li>
+        <li>ALT+V and middle click now allow pasting from the primary selection on X11/Wayland</li>
+        <li>Stacked portals (visual only)</li>
+        <li>Many other bug fixes and small changes</li>
+      </ul>
+    </description>
+  </release>
   <release version="12.2.1" date="2026-06-27">
     <url type="details">https://github.com/odamex/odamex/releases/tag/12.2.1</url>
     <description>
